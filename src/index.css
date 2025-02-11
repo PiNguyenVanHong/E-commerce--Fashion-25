@@ -1,0 +1,124 @@
+@import url(https://db.onlinewebfonts.com/c/78dcfd87115957c9a2696d87d2cadfe0?family=ImperiaB+W01+Regular);
+@import url(https://db.onlinewebfonts.com/c/a7ee2e2f4497d7743ade0074739fe99c?family=Hisquins+DEMO);
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 32 62% 96%;
+    --foreground: 0 0% 6.67%;
+  }
+}
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  body {
+    @apply bg-white text-foreground m-0 p-0 text-base font-second;
+  }
+
+  img {
+    @apply w-full h-full object-cover;
+  }
+
+  .title-website {
+    @apply text-6xl py-4 font-main uppercase [word-spacing:1.5rem] overflow-hidden;
+  }
+
+  .title-header {
+    @apply uppercase font-second font-bold tracking-wider overflow-hidden;
+  }
+
+  .header-link {
+    @apply block relative pb-1 after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-black after:origin-bottom-right after:transition after:duration-200 hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+
+  .btn-search {
+    @apply rounded-full bg-slate-100 p-2 relative -top-0.5 text-base;
+  }
+
+  /* Floating Menu */
+  .btn-hamburger {
+    @apply cursor-pointer p-2 bg-white shadow-lg rounded-full flex items-center justify-center border shadow-white/40;
+  }
+
+  .btn-hamburger input {
+    @apply hidden;
+  }
+
+  .btn-hamburger svg {
+    @apply h-10 transition-transform duration-500 ease-[cubic-bezier(0.4,_0,_0.2,_1)];
+  }
+
+  .btn-hamburger .line {
+    @apply fill-none stroke-black;
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 8px !important;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px !important;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #ffffff3b;
+}
+
+.bn-editor {
+  background: transparent !important;
+}
+
+/* Floating menu */
+
+.btn-hamburger .line {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-hamburger .line-top-bottom {
+  stroke-dasharray: 12 63;
+}
+
+.btn-hamburger input:checked + svg {
+  transform: rotate(-45deg);
+}
+
+.btn-hamburger input:checked + svg .line-top-bottom {
+  stroke-dasharray: 20 300;
+  stroke-dashoffset: -32.42;
+}
